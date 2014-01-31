@@ -1,0 +1,35 @@
+#!/usr/bin/python3
+
+"""Ceci est un fichier ./configure fait maison.
+
+Utilisation : 
+Pour adapter le script aux types de fichiers utilisés, il faut modifier deux variables:
+    -EXTENSION : L'extension de chaque fichier source
+    -OPERATIONS : La chaine de compilation a utiliser pour ce type de fichier
+        Cette dernière peut/doit contenir 2 éléments : 
+        {0}, le nom du fichier sans l'extension
+        {1}, l'extension
+    Plusieurs EXTENSIONS/OPERATIONS sont préprogrammées.
+
+"""
+
+import re
+import os
+import sys
+
+C = ("gcc {0}{1} -o {0}\n", ".c")
+NASM = ("nasm {0}{1} -f elf\n\tld {0}.o -o {0}\n", ".nasm")
+CPP = ("g++ {0}{1} - o {0}\n", ".cpp")
+
+OPERATIONS, EXTENSION = NASM
+
+fichiers = [i for i in os.listdir() if re.match('(.)+{0}$'.format(EXTENSION), i)]
+
+for i in range(0, len(fichiers)):
+    fichiers[i] = fichiers[i][:-(len(EXTENSION))]
+
+with open("Makefile", "w") as fd:
+    fd.write("all: {0}\n\n".format(" ".join(fichiers)))
+    for i in fichiers:
+        fd.write("{0}: {0}{1}\n\t{2}\n".format(i, EXTENSION, OPERATIONS.format(i, EXTENSION)))
+

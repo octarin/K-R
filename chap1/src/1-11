@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+#
+# This script serves to test the 1-10 program, faggot.
+# If you are not used to the UNIX way, i'm gonna to 
+# learn to you, t4pz how to test it, if you have'nt
+# yet rtfm.
+# ./1-11 | ./1-10
+# See, faggot ?
+#
+
+printf "La racine carrée de pi est égale à pi exposant zéro \n\nvirgule cinq.\n" #To test the newline
+printf "Hello World\t\tcaca\t\t\tTHE GAME :þ\n\t"	#To test the tabs, tapz
+printf "I would like to get a macbook\b\b\b\b\b\b\bcybernetik intairf\b\b\b\berface  \binto my skull." #To test the backspaces
+
