@@ -8,15 +8,7 @@
 
 int main(void)
 {
-    printf("\a");
-    printf("\b");
-    printf("\e");
-    printf("\f");
-    printf("\n");
-    printf("\r");
-    printf("\t");
-    printf("\v");
-    printf("\x61");
+    printf("\a\b\e\f\n\r\t\v\x61");
     return 0;
 }
 
