@@ -25,6 +25,7 @@ int main(void)
             state = IN;
         }
     }
+
     return 0;
 }
 

@@ -1,6 +1,7 @@
-/* 1-18.c:
- * This program removes trailing blanks and tabs from each line
+/* 
+ *      1-18.c: This program removes trailing blanks and tabs from each line
  * of input, and deletes entirely blank lines.
+ *
  */
 
 #include <stdio.h>

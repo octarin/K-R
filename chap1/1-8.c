@@ -12,6 +12,7 @@ int main(void)
 {
     char c;
     int nb = 0, nt = 0, nl = 0;
+
     while ((c = getchar()) != EOF) {
         if (c == ' ')
             nb++;
@@ -21,6 +22,7 @@ int main(void)
             nl++;
     }
     printf("%d\t%d\t%d\n", nb, nt, nl);
+
     return 0;
 }
 

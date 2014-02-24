@@ -21,6 +21,7 @@ int main(void)
         celsius = (fahr - 32.0) * (5.0 / 9.0);
         printf("%6.1f\t\t%3.0f\n", fahr, celsius);
     }
+
     return 0;
 }
 

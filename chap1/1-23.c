@@ -1,3 +1,10 @@
+/*
+ *
+ *      1-23.c: This program removes all comments from a C program,
+ *   passed to the standard input.
+ *
+ */
+
 #include <stdio.h>
 
 // états liés aux strings
@@ -18,7 +25,7 @@
 
 int main(void)
 {
-    char state = OUT, c, save, savestate;;
+    char state = OUT, c, save, savestate;
 
     while ((c = getchar()) != EOF) {
         switch (state) {

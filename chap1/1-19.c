@@ -1,3 +1,10 @@
+/*
+ *
+ *      1-19.c: This program defines a function which reverse a character
+ *  string, and implements it, a line at a time.
+ *
+ */
+
 #include <stdio.h>
 
 #define MAXLINE 1000
@@ -19,6 +26,7 @@ int main(void)
 
     return 0;
 }
+
 int getline2(char str[])
 {
     int size = 0;

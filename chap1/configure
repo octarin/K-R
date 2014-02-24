@@ -21,7 +21,7 @@ C = ("gcc {0}{1} -o {0}\n", ".c")
 NASM = ("nasm {0}{1} -f elf\n\tld {0}.o -o {0}\n", ".nasm")
 CPP = ("g++ {0}{1} - o {0}\n", ".cpp")
 
-OPERATIONS, EXTENSION = NASM
+OPERATIONS, EXTENSION = C
 
 fichiers = [i for i in os.listdir() if re.match('(.)+{0}$'.format(EXTENSION), i)]
 
@@ -32,4 +32,8 @@ with open("Makefile", "w") as fd:
     fd.write("all: {0}\n\n".format(" ".join(fichiers)))
     for i in fichiers:
         fd.write("{0}: {0}{1}\n\t{2}\n".format(i, EXTENSION, OPERATIONS.format(i, EXTENSION)))
+
+    fd.write("install: {0}\n\n".format(" ".join(fichiers)))
+    for i in fichiers:
+        fd.write("\tmv {0} bin\n".format(i))
 
