@@ -7,11 +7,10 @@ int main(void)
     char str[1000];
 
     for (i = 0; i < lim - 1; i++, c = getchar()) {
-        if (c != EOF)
-            if (c != '\n')
-                str[i] = c;
-            else break;
-        else break;
+        if (c == EOF)
+            if (c == '\n')
+                break;
+        str[i] = c;
     }
 
     return 0;
